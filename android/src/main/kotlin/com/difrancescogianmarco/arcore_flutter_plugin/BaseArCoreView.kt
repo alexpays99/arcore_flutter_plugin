@@ -90,7 +90,9 @@ open class BaseArCoreView(val activity: Activity, context: Context, messenger: B
     }
 
     override fun dispose() {
+        println("dispose BaseArCoreView");
         if (arSceneView != null) {
+            println("arSceneView not null BaseArCoreView");
             onPause()
             onDestroy()
         }
