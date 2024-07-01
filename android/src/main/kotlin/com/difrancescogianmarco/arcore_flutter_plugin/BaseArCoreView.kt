@@ -76,6 +76,7 @@ open class BaseArCoreView(val activity: Activity, context: Context, messenger: B
 
             override fun onActivityDestroyed(activity: Activity) {
                 debugLog("onActivityDestroyed")
+                println("onActivityDestroyed");
 //                onDestroy()
             }
         }
@@ -85,7 +86,7 @@ open class BaseArCoreView(val activity: Activity, context: Context, messenger: B
     }
 
     override fun getView(): View {
-        println("getView()");
+        println("getView() 2");
         return arSceneView ?: throw NullPointerException("arSceneView is not initialized")
     }
 
