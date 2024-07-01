@@ -86,15 +86,22 @@ open class BaseArCoreView(val activity: Activity, context: Context, messenger: B
     }
 
     override fun getView(): View {
-        println("getView() 2");
-        return arSceneView ?: throw NullPointerException("arSceneView is not initialized")
+        Log.d(TAG, "getView() called, arSceneView: $arSceneView")
+        if (arSceneView == null) {
+            Log.e(TAG, "getView() called after dispose")
+            // Returning a fallback view or null to prevent the crash
+            return View(activity).apply {
+                visibility = View.GONE
+            }
+        }
+        return arSceneView ?: throw IllegalStateException("arSceneView is not initialized")
     }
 
     override fun dispose() {
         println("dispose BaseArCoreView");
         if (arSceneView != null) {
             println("arSceneView not null BaseArCoreView");
-            // onPause()
+            onPause()
             onDestroy()
         }
     }
