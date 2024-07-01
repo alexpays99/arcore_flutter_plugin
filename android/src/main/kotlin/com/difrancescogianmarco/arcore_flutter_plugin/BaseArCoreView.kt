@@ -196,16 +196,19 @@ open class BaseArCoreView(val activity: Activity, context: Context, messenger: B
 
     fun onPause() {
         debugLog("onPause()")
+        println("onPause() in BaseArCoreView");
         if (arSceneView != null) {
+            println("onPause() in BaseArCoreView 2");
             arSceneView?.pause()
         }
     }
 
     open fun onDestroy() {
-        Log.d(TAG, "onDestroy() called")
-        arSceneView?.let {
-            it.destroy()
+        println("onDestroy()");
+        if (arSceneView != null) {
+            println("arSceneView not null");
+            arSceneView?.destroy()
             arSceneView = null
-        } ?: Log.e(TAG, "arSceneView is already null in onDestroy()")
+        }
     }
 }
