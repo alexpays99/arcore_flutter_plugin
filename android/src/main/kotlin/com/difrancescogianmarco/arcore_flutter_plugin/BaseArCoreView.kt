@@ -199,7 +199,9 @@ open class BaseArCoreView(val activity: Activity, context: Context, messenger: B
     }
 
     open fun onDestroy() {
+        println("onDestroy()");
         if (arSceneView != null) {
+            println("arSceneView not null");
             arSceneView?.destroy()
             arSceneView = null
         }
