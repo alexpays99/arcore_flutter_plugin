@@ -85,7 +85,7 @@ open class BaseArCoreView(val activity: Activity, context: Context, messenger: B
     }
 
     override fun getView(): View {
-        return arSceneView as View
+        return arSceneView ?: throw NullPointerException("arSceneView is not initialized")
     }
 
     override fun dispose() {
