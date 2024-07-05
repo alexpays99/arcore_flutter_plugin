@@ -23,7 +23,7 @@ class ArCoreView extends StatefulWidget {
       required this.onArCoreViewCreated,
 //    @required this.onArCoreUnsupported,
       this.enableTapRecognizer = false,
-      this.enablePlaneRenderer = false,
+      this.enablePlaneRenderer = true,
       this.enableUpdateListener = false,
       this.type = ArCoreViewType.STANDARDVIEW,
       this.debug = false})
