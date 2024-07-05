@@ -513,7 +513,7 @@ class ArCoreView(val activity: Activity, context: Context, messenger: BinaryMess
     }
 
     override fun dispose() {
-        if (arSceneView != null) {
+        if (arSceneView != null && arSceneView.isInitialized) {
             onPause()
             onDestroy()
         }
