@@ -55,7 +55,7 @@ class RenderableCustomFactory {
                             .setRecenterMode(RenderableSource.RecenterMode.ROOT)
                     } else {
                         renderableSourceBuilder
-                            .setSource(context, Uri.parse(url), RenderableSource.SourceType.GLTF2)
+                            .setSource(context, Uri.parse(url), RenderableSource.SourceType.GLB)
                             .setScale(0.5f)
                             .setRecenterMode(RenderableSource.RecenterMode.ROOT)
                     }
