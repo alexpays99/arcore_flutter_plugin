@@ -16,14 +16,17 @@ class NodeFactory {
             if (debug) {
                 Log.i(TAG, flutterNode.toString())
             }
-            val node = flutterNode.buildNode()
-            RenderableCustomFactory.makeRenderable(context, flutterNode) { renderable, t ->
-                if (renderable != null) {
-                    node.renderable = renderable
-                    handler(node, null)
-                }else{
-                    handler(null,t)
-                }
+            try {
+                val node = flutterNode.buildNode()
+                RenderableCustomFactory.makeRenderable(context, flutterNode) { renderable, t ->
+                    if (renderable != null) {
+                        node.renderable = renderable
+                        handler(node, null)
+                    }else{
+                        handler(null,t)
+                    }
+            } catch (e: Exception) {
+                result.error("Renderable Factory Error", e.localizedMessage, null)
             }
         }
     }
