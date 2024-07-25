@@ -26,7 +26,7 @@ class NodeFactory {
                         handler(null,t)
                     }
             } catch (e: Exception) {
-                result.error("Renderable Factory Error", e.localizedMessage, null)
+                
             }
         }
     }
