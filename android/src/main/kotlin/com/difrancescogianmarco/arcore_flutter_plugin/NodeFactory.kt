@@ -25,6 +25,7 @@ class NodeFactory {
                     }else{
                         handler(null,t)
                     }
+                }
             } catch (e: Exception) {
                 Log.i(TAG, "Error makeNode")
             }
